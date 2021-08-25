@@ -53,7 +53,7 @@ async def on_message(message):
     await message.channel.send(daily)
   
   if msg('*help'):
-    await send("*inspire, use this command to get a inspirational quote. *dailyinspire, use this command to get the quote of the day. *ping, Pong!. *invite, use this command to get a invite to the bot. *support, use this command to get our discord server. *upcoming, use this command to learn about whats coming soon (hopefully). *hello|owner, use this command to say hello to the owner")
+    await send("*inspire, use this command to get a inspirational quote. *dailyinspire, use this command to get the quote of the day. *ping, Pong!. *invite, use this command to get a invite to the bot. *support, use this command to get our discord server. *upcoming, use this command to learn about whats coming soon (hopefully). *hello, use this command to say hello to the owner")
 
   if msg('*ping'):
     await message.channel.send('Pong!')
@@ -83,7 +83,7 @@ async def on_message(message):
     await send("We are trying to get ModMail.")
 
   if message.content.startswith('*hello'):
-   channel = client.get_channel(os.getenv('bot-hi'))
+   channel = client.get_channel(880001901750538271)
    await channel.send('Someone said Hello to you <@554147162708246550>')
 
 keep_alive()
