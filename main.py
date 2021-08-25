@@ -53,7 +53,7 @@ async def on_message(message):
     await message.channel.send(daily)
   
   if msg('*help'):
-    await send("*inspire, use this command to get a inspirational quote. *dailyinspire, use this command to get the quote of the day. *ping, Pong!. *invite, use this command to get a invite to the bot. *support, use this command to get our discord server. *upcoming, use this command to learn about whats coming soon (hopefully).")
+    await send("*inspire, use this command to get a inspirational quote. *dailyinspire, use this command to get the quote of the day. *ping, Pong!. *invite, use this command to get a invite to the bot. *support, use this command to get our discord server. *upcoming, use this command to learn about whats coming soon (hopefully). *hello|owner, use this command to say hello to the owner")
 
   if msg('*ping'):
     await message.channel.send('Pong!')
@@ -70,9 +70,6 @@ async def on_message(message):
   if msg('*suggest'):
     await message.channel.send('We are currently working on this command, in the mean time please use *support and go to our Discord server')
 
-  if msg('*hello'):
-    await message.channel.send('Hello!')
-
   if msg('*slash'):
     await message.channel.send("We most likely wont be using slash commands anytime soon as it is hard to do.")
   
@@ -84,6 +81,10 @@ async def on_message(message):
 
   if msg('*upcoming'):
     await send("We are trying to get ModMail.")
+
+  if message.content.startswith('*hello'):
+   channel = client.get_channel(os.getenv('bot-hi'))
+   await channel.send('Someone said Hello to you <@554147162708246550>')
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
