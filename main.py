@@ -53,7 +53,7 @@ async def on_message(message):
     await message.channel.send(daily)
   
   if msg('*help'):
-    await send("*inspire, use this command to get a inspirational quote. *dailyinspire, use this command to get the quote of the day. *ping, Pong!. *invite, use this command to get a invite to the bot. *support, use this command to get our discord server. *upcoming, use this command to learn about whats coming soon (hopefully). *hello, use this command to say hello to the owner")
+    await send("*inspire, use this command to get a inspirational quote. *dailyinspire, use this command to get the quote of the day. *ping, Pong!. *invite, use this command to get a invite to the bot. *support, use this command to get our discord server. *upcoming, use this command to learn about whats coming soon (hopefully). *hello, use this command to say hello to the owner. *owner, learn about the owner of the bot. *github, get the bots github.")
 
   if msg('*ping'):
     await message.channel.send('Pong!')
@@ -85,6 +85,20 @@ async def on_message(message):
   if message.content.startswith('*hello'):
    channel = client.get_channel(880001901750538271)
    await channel.send('Someone said Hello to you <@554147162708246550>')
+
+  if msg('*owner'):
+    await send("The owner is Blurpington Blarpington#7996.")
+
+  if msg('*owner'):
+    channel = client.get_channel(880249125420040224)
+    await send("someone used the *owner command")
+
+  if msg('*github'):
+    channel = client.get_channel(880249125420040224)
+    await send("someone used *github")
+
+  if msg('*github'):
+    await send("Our github is here https://github.com/JsmliYT/EverythingBot")
 
 keep_alive()
 client.run(os.getenv('TOKEN'))
